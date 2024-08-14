@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: #0a8754;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+    background-image: url(./bg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+audio {
+    display: none;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+}
+
+.flag img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    animation: wave 5s infinite;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.5rem;
+    animation: fadeIn 4s ease-in-out;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.play {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #024608;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.play:hover {
+    background-color: #ffffff;
+    color: #052e08;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; }
+    100% { text-shadow: 0 0 20px #ff4c4c, 0 0 30px #ff4c4c, 0 0 40px #ff4c4c; }
+}
+
+@keyframes wave {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0); }
+}
+
+.fade-out {
+    animation: fadeOut 2s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 2s forwards;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .flag img {
+        width: 200px;
+    }
+}
